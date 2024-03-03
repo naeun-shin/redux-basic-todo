@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { StyledDiv, StyledTable, StyledTh, StyledButton } from "./styles";
-import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { StyledDiv, StyledTable, StyledTh, StyledButton } from './styles';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 /**
  * 컴포넌트 개요 : Todo 메인 컴포넌트에서 각 todo item의 [상세보기]를 선택했을 경우 보이는 컴포넌트 영역
@@ -25,8 +25,8 @@ function DetailBox() {
   // 지금은 uuidv4()를 사용해서 새로고침할 때 마다 변경 -> DB 또는 Cookie 등 사용하면 해결
   useEffect(() => {
     if (filteredTodos.length <= 0 || filteredTodos.length > 1) {
-      alert("올바르지 않은 접근입니다. 메인페이지로 이동합니다.");
-      navigate("/");
+      alert('올바르지 않은 접근입니다. 메인페이지로 이동합니다.');
+      navigate('/');
     }
   }, []);
 
@@ -35,7 +35,7 @@ function DetailBox() {
 
   // 이전 페이지로 가기 버튼을 선택했을 때, 컴포넌트 이동하는 함수
   const handleButtonClick = () => {
-    navigate("/");
+    navigate('/');
   };
 
   return (
@@ -60,7 +60,7 @@ function DetailBox() {
         </tr>
         <tr>
           <StyledTh>완료여부</StyledTh>
-          <StyledTh>{todo?.isDone ? "완료" : "미완료"}</StyledTh>
+          <StyledTh>{todo?.isDone ? '완료' : '미완료'}</StyledTh>
         </tr>
       </StyledTable>
       <StyledButton onClick={handleButtonClick}>
